@@ -2,6 +2,10 @@ import pytest
 from main import *
 
 
+@pytest.xfail("Just by the conditions")
+def test_equality():
+    assert Truck() != Ship()
+
 def test_truck_delivery():
     truck = Truck()
     assert truck.deliver() == "Доставка по суше (грузовиком)"
